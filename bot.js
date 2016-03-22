@@ -47,6 +47,7 @@ function translate(msg, destiny) {
                 $(this).children('tr').each(function(){
                     /*We want to separate the cells for output*/
                     if ( ($(this).attr('class') != "langHeader") && ($(this).attr('class') != "odd") ) {
+                            console.log("There is translation!");
                             thereIsTranslation = true;
                             $(this).children('td').each(function() {
                                 
