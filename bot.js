@@ -7,7 +7,7 @@ var cheerio = require('cheerio');
 var token = '218594964:AAFv56r5Sn71KmFMMtOfKOVjyzhKip7wp7M'; //We read the token from a gitignored file
 
 // Setup polling way
-var bot = new TelegramBot(token, {polling: true});
+var bot = new TelegramBot(token);
 bot.setWebHook('https://agile-shore-43390.herokuapp.com/' + bot.token);
 
 
