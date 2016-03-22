@@ -1,2 +1,2 @@
-require('./bot.js');
-require('./web.js');
+require('bot');
+require('web');
