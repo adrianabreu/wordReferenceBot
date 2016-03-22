@@ -82,7 +82,7 @@ function translate(msg, destiny) {
                 
             }).call($('table.WRD').first(),thereIsTranslation);
             if(!thereIsTranslation)
-                mesage = "*There is no translation for that word*";
+                message = "*There is no translation for that word*";
 
             //Message back
             var fromId = msg.chat.id;
