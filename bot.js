@@ -41,12 +41,13 @@ function translate(msg, destiny) {
         if(!error && response.statusCode==200){
             var $ = cheerio.load(body);
             var message='';
-
-            (function(){
+            var thereIsTranslation=false;
+            (function(thereIsTranslation){
                 /*We need to extract all the rows*/
                 $(this).children('tr').each(function(){
                     /*We want to separate the cells for output*/
                     if ( ($(this).attr('class') != "langHeader") && ($(this).attr('class') != "odd") ) {
+                            thereIsTranslation = true;
                             $(this).children('td').each(function() {
                                 
                                 //From the original we need to parse the word + next td (meaning)
@@ -78,7 +79,9 @@ function translate(msg, destiny) {
                     }            
                 });
                 
-            }).call($('table.WRD').first());
+            }).call($('table.WRD').first(),thereIsTranslation);
+            if(!thereIsTranslation)
+                mesage = "*There is no translation for that word*";
 
             //Message back
             var fromId = msg.chat.id;
