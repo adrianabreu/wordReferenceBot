@@ -79,10 +79,10 @@ function translate(msg, destiny) {
                         });
                     }            
                 });
-                
+                if(!thereIsTranslation)
+                    message = "*There is no translation for that word*";
             }).call($('table.WRD').first(),thereIsTranslation);
-            if(!thereIsTranslation)
-                message = "*There is no translation for that word*";
+            
 
             //Message back
             var fromId = msg.chat.id;
