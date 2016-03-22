@@ -8,6 +8,7 @@ var token = '218594964:AAFv56r5Sn71KmFMMtOfKOVjyzhKip7wp7M'; //We read the token
 
 // Setup polling way
 var bot = new TelegramBot(token, {polling: true});
+bot.setWebHook('https://agile-shore-43390.herokuapp.com/' + bot.token);
 
 
 console.log('bot server started...');
@@ -116,3 +117,5 @@ bot.onText(/\/help/, function (msg, match) {
             '/help display this message';
   bot.sendMessage(fromId, resp);
 });
+
+module.exports = bot;
