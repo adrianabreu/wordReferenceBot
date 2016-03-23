@@ -113,7 +113,7 @@ bot.onText(/\/spa (.+)/, function (msg, match) {
   }
   
 });
-
+//Matches /help
 bot.onText(/\/help/, function (msg, match) {
   var fromId = msg.chat.id;
   var resp = 'Modo de uso - Usage mode: \n' + 

@@ -1,8 +1,7 @@
 {
-  "name": "Node.js Getting Started",
-  "description": "A barebones Node.js app using Express 4",
+  "name": "wordreference-bot",
+  "description": "A telegram bot that crawls wordreference",
   "repository": "https://github.com/heroku/node-js-getting-started",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static"],
-  "image": "heroku/nodejs"
+  "keywords": ["node", "express", "static"]
 }

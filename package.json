@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.5",
-  "description": "A sample Node.js app using Express 4",
+  "name": "wordreference-bot",
+  "version": "0.0.3",
+  "description": "A telegram bot that crawls wordreference",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/aabreuglez/wordReferenceBot"
   },
   "keywords": [
     "node",

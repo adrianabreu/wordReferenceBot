@@ -1,39 +1,42 @@
-# node-js-getting-started
+# wordReferenceBot
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+This is a telegram bot made on Node.js for helping with translations.
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+I have trying to learn Englsh on my own. But I need to translate a lot of new words and with this bot, it's extremely easy :)
 
-## Running Locally
+Since wordreference's api is no longer available, I'm doing web scraping using [request](https://github.com/request/request) + [cheerio](https://github.com/cheeriojs/cheerio).
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
-
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
+##Commands
 
 ```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-or
+/spa - Translate the list of words from English to Spanish.
+/eng - Traduce esta lista de palabra de español a inglés.
+/help - Show help message.
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+```
+
+##Features
+
+This bot uses a webhook for better response time, it also uses 
+
+##Run your own
+
+I have deployed it to Heroku with almost no problem.
+
+1. Get your own bot via [@BotFather](https://telegram.me/BotFather), make your own bot and get your token.
+2. Place your token in bot.js file.
+3. Create a heroku account and copy node's example.
+4. Replace those files with these. 
+5. Make a push to heroku master `git push heroku master`
+6. Enjoy
+
+## Working!
+
+![bot chat](botworks.png)
 
 ## Documentation
 
-For more information about using Node.js on Heroku, see these Dev Center articles:
+For more info of everything that has struggled me:
 
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+- [Problems crawling wordreference](http://stackoverflow.com/questions/34860760/problems-crawling-wordreference)
+- [Configure a telegram bot webhook into an existing express app](http://mvalipour.github.io/node.js/2015/12/06/telegram-bot-webhook-existing-express/)
