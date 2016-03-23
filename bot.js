@@ -61,7 +61,7 @@ function translate(msg, destiny) {
                                     message += '_'+cell+'_' + '\n';
                                 }
                                 if ($(this).attr('class') == "ToWrd") {
-                                    //There is an em child on row that has additional info that we do not want to show
+                                    //There is an em child on that cell that has additional info that we do not want to show
                                     cell =  $('<textarea />').html($(this).clone()
                                         .children() //select all the children
                                         .remove()   //remove all the children
@@ -97,7 +97,7 @@ function translate(msg, destiny) {
 
 
 
-//Matches /echo [whatever]
+//Matches /eng [list,of,words]
 bot.onText(/\/eng (.+)/, function (msg, match) {
   var wordsToSearch = match[1].split(','); //Array with words to traduce
   for (word in wordsToSearch) {
@@ -105,6 +105,7 @@ bot.onText(/\/eng (.+)/, function (msg, match) {
   }
 });
 
+//Matches /spa [lista,de,palabras]
 bot.onText(/\/spa (.+)/, function (msg, match) {
   var wordsToSearch = match[1].split(','); //Array with words to traduce
   for (word in wordsToSearch) {
