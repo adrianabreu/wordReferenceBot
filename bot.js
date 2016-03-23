@@ -4,7 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 /* Bot setup */
-var token = 'YOUR_TOKEN'; //We read the token from a gitignored file
+var token = 'YOUR_TOKEN';
 
 // Setup polling way
 var bot = new TelegramBot(token);
