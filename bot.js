@@ -80,7 +80,7 @@ function translate(msg, destiny) {
                     }            
                 });
                 if(!thereIsTranslation)
-                    message = "*There is no translation for: *" + '_' + destiny.split('=')[1] + '_';
+                    message = '*There is no translation for ' + destiny.split('=')[1] + '*';
             }).call($('table.WRD').first(),thereIsTranslation);
             
 
