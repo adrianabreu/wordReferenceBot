@@ -2,14 +2,12 @@
 var TelegramBot = require('node-telegram-bot-api');
 var translator = require('./translator');
 
-
 /* Bot setup */
-var token = ''; 
-//We read the token from a gitignored file
+var token = 'YOUR_TOKEN';
 
-// Setup webhook
+// Setup polling way
 var bot = new TelegramBot(token);
-bot.setWebHook('https://agile-shore-43390.herokuapp.com/' + bot.token);
+bot.setWebHook('YOUR_WEBHOOK' + bot.token);
 
 
 console.log('bot server started...');
@@ -21,9 +19,11 @@ function sendMessageBack(id, message, options) {
     bot.sendMessage(id, message, options);
 }
 
+
 //Matches /eng [list,of,words]
 bot.onText(/\/eng (.+)/, function (msg, match) {
   var wordsToSearch = match[1].split(','); //Array with words to traduce
+
   for (word in wordsToSearch) {
     translator.translate(msg, 'http://www.wordreference.com/es/en/translation.asp?spen=' 
         + wordsToSearch[word], sendMessageBack);
