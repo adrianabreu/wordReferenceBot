@@ -3,11 +3,11 @@ var TelegramBot = require('node-telegram-bot-api');
 var translator = require('./translator');
 
 /* Bot setup */
-var token = 'YOUR_TOKEN';
+var token = '218594964:AAFv56r5Sn71KmFMMtOfKOVjyzhKip7wp7M';
 
 // Setup polling way
 var bot = new TelegramBot(token);
-bot.setWebHook('YOUR_WEBHOOK' + bot.token);
+bot.setWebHook('https://agile-shore-43390.herokuapp.com/' + bot.token);
 
 
 console.log('bot server started...');
