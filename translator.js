@@ -13,116 +13,118 @@ var translator = (function() {
 		'spa' : 'http://www.wordreference.com/es/translation.asp?tranword='
 	}
 
-	function is_a_title(string, $)
-	{
-		aux = false;
-		possibleTitles = ["Principal Translations", "Additional Translations",
-		 "Compound Forms"];
+	var Parser = {
+		is_a_title : function (string, $)
+		{
+			aux = false;
+			possibleTitles = ["Principal Translations",
+							  "Additional Translations", "Compound Forms"];
 
-		for (var i in possibleTitles) {
-			if (string == possibleTitles[i]) 
-				aux = true;
+			for (var i in possibleTitles) {
+				if (string == possibleTitles[i]) 
+					aux = true;
+			}
+
+			return aux;			
+		},
+
+		parse_from_word : function (obj, $) 
+		{
+			var message = '';
+
+			var cell =  $('<textarea />').html($(obj).children('strong')
+										 .html()).text();
+			message += '*' + cell + '* ';
+
+			//next td
+			cell =  $('<textarea />').html($(obj).next('td').html()).text();
+			message += '_'+cell+'_' + '\n';
+
+			return message;
+		},
+
+		parse_to_word : function (obj, $)
+		{
+			//There is an em child on that cell that
+			// has additional info that we do not want to show
+			var message = '';
+			var cell =  $('<textarea />').html($(obj).clone()
+			    .children() //select all the children
+			    .remove()   //remove all the children
+			    .end().html()).text();
+
+			message += cell;
+			message += '\n'; 
+
+			return message;
+		},
+
+		parse_title : function (obj, $)
+		{
+			var message = '';
+			message += '\n----------------------------------\n';
+			message +=  $(obj).attr('title');
+			message += '\n----------------------------------\n';  
+			return message;  
+		},
+
+		parse_translation : function ($, word_being_searched)
+		{
+			var message ='';
+			var translation_found = false;
+
+			/*We need to extract all the rows*/
+			$(this).children('tr').each(function(){
+			/*We want to separate the cells for output*/
+				if ( !($(this).hasClass('langHeader') ) ) {
+
+				        translation_found = true;
+				        $(this).children('td').each(function() {
+				            
+				            //From the original we need to parse 
+				            //the word + next td (meaning)
+				            if ($(this).hasClass('FrWrd')) {
+				            	message += Parser.parse_from_word(this, $);
+				            }
+				            if ($(this).hasClass('ToWrd')) {
+				            	message += Parser.parse_to_word(this, $);
+				            } else {
+				                if (Parser.is_a_title($(this).attr('title'))) {
+				                     message += Parser.parse_title(this, $);
+				                } 
+				            }
+				    });
+				}            
+			});
+
+			if(!translation_found)
+				message = '*There is no translation for ' + word_being_searched 
+							+ '*';
+			return message;
+		}, 
+
+		parse_request : function (msg, word_being_searched, sender_function,
+								  error, response, body)
+		{
+
+			if(!error && response.statusCode==200){
+				var $ = cheerio.load(body);
+
+				var message = Parser.parse_translation
+						.call( $('table.WRD').first(), $, word_being_searched);
+
+				//Message back
+				var fromId = msg.chat.id;
+				var options = {
+				    parse_mode : 'Markdown'
+				};
+
+				sender_function(fromId, message, options);
+			}
+
 		}
 
-		return aux;
-	}
-
-	function parse_from_word(obj, $)
-	{
-		var message = '';
-
-		var cell =  $('<textarea />').html($(obj).children('strong')
-									 .html()).text();
-		message += '*' + cell + '* ';
-
-		//next td
-		cell =  $('<textarea />').html($(obj).next('td').html()).text();
-
-		message += '_'+cell+'_' + '\n';
-
-		return message;
-	}
-
-	function parse_to_word (obj, $)
-	{
-		//There is an em child on that cell that
-		// has additional info that we do not want to show
-		var message = '';
-		var cell =  $('<textarea />').html($(obj).clone()
-		    .children() //select all the children
-		    .remove()   //remove all the children
-		    .end().html()).text();
-
-		message += cell;
-		message += '\n'; 
-
-		return message;
-	}
-
-	function parse_title(obj, $)
-	{
-		var message = '';
-		message += '\n----------------------------------\n';
-		message +=  $(obj).attr('title');
-		message += '\n----------------------------------\n';  
-		return message;  
-	}
-
-	function parse_translation($, word_being_searched)
-	{
-        var message ='';
-        var translation_found = false;
- 
-	    /*We need to extract all the rows*/
-	    $(this).children('tr').each(function(){
-	        /*We want to separate the cells for output*/
-	        if ( ($(this).attr('class') != "langHeader") ) {
-
-	                translation_found = true;
-	                $(this).children('td').each(function() {
-	                    
-	                    //From the original we need to parse 
-	                    //the word + next td (meaning)
-	                    if ($(this).attr('class') == "FrWrd") {
-	                    	message += parse_from_word(this, $);
-	                    }
-	                    if ($(this).attr('class') == "ToWrd") {
-	                    	message += parse_to_word(this, $);
-	                    } else {
-	                        if (is_a_title($(this).attr('title'))) {
-	                             message += parse_title(this, $);
-	                        } 
-	                    }
-	            });
-	        }            
-	    });
-	    if(!translation_found)
-	        message = '*There is no translation for ' + word_being_searched 
-	    			+ '*';
-	    return message;
-
-	}
-
-	function parse_request(msg, word_being_searched, sender_function, error,
-						   response, body)
-	{
-
-		if(!error && response.statusCode==200){
-            var $ = cheerio.load(body);
-
-            var message = parse_translation.call( $('table.WRD').first(), $,
-            										word_being_searched);
-            
-            //Message back
-            var fromId = msg.chat.id;
-            var options = {
-                parse_mode : 'Markdown'
-            };
-
-            sender_function(fromId, message, options);
-        }
-
-	}
+	};
 
 	function translate(msg, destiny, sender_function)
 	{
@@ -138,7 +140,7 @@ var translator = (function() {
 
 	    var word_being_searched = destiny.split('=')[1];
 	    //Inject msg and sender_function
-	    request(options, parse_request.bind(null,msg,word_being_searched,
+	    request(options, Parser.parse_request.bind(null,msg,word_being_searched,
 	    									sender_function)); 
 	    
 	    
