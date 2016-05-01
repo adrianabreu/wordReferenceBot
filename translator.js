@@ -3,14 +3,17 @@ var cheerio = require('cheerio');
 
 var translator = (function() {
 
-	var mode = 'eng';
+	//user-id : translation mode
+	var users_translation_mode = {};
+
+	var default_mode = 'spa';
 
 	var translations = {
 		'eng' : 'http://www.wordreference.com/es/en/translation.asp?spen=',
 		'spa' : 'http://www.wordreference.com/es/translation.asp?tranword='
 	}
 
-	function isATitle(string, $)
+	function is_a_title(string, $)
 	{
 		aux = false;
 		possibleTitles = ["Principal Translations", "Additional Translations",
@@ -24,7 +27,7 @@ var translator = (function() {
 		return aux;
 	}
 
-	function parese_from_word(obj, $)
+	function parse_from_word(obj, $)
 	{
 		var message = '';
 
@@ -42,27 +45,27 @@ var translator = (function() {
 
 	function parse_to_word (obj, $)
 	{
-        //There is an em child on that cell that
-        // has additional info that we do not want to show
-        var message = '';
-        var cell =  $('<textarea />').html($(obj).clone()
-            .children() //select all the children
-            .remove()   //remove all the children
-            .end().html()).text();
-        
-        message += cell;
-        message += '\n'; 
+		//There is an em child on that cell that
+		// has additional info that we do not want to show
+		var message = '';
+		var cell =  $('<textarea />').html($(obj).clone()
+		    .children() //select all the children
+		    .remove()   //remove all the children
+		    .end().html()).text();
 
-        return message;
+		message += cell;
+		message += '\n'; 
+
+		return message;
 	}
 
 	function parse_title(obj, $)
 	{
 		var message = '';
-        message += '\n----------------------------------\n';
-        message +=  $(obj).attr('title');
-        message += '\n----------------------------------\n';  
-        return message;  
+		message += '\n----------------------------------\n';
+		message +=  $(obj).attr('title');
+		message += '\n----------------------------------\n';  
+		return message;  
 	}
 
 	function parse_translation($, word_being_searched)
@@ -74,19 +77,19 @@ var translator = (function() {
 	    $(this).children('tr').each(function(){
 	        /*We want to separate the cells for output*/
 	        if ( ($(this).attr('class') != "langHeader") ) {
-	                console.log("There is translation!");
+
 	                translation_found = true;
 	                $(this).children('td').each(function() {
 	                    
 	                    //From the original we need to parse 
 	                    //the word + next td (meaning)
 	                    if ($(this).attr('class') == "FrWrd") {
-	                    	message += parese_from_word(this, $);
+	                    	message += parse_from_word(this, $);
 	                    }
 	                    if ($(this).attr('class') == "ToWrd") {
 	                    	message += parse_to_word(this, $);
 	                    } else {
-	                        if (isATitle($(this).attr('title'))) {
+	                        if (is_a_title($(this).attr('title'))) {
 	                             message += parse_title(this, $);
 	                        } 
 	                    }
@@ -96,7 +99,6 @@ var translator = (function() {
 	    if(!translation_found)
 	        message = '*There is no translation for ' + word_being_searched 
 	    			+ '*';
-	    console.log("I will return this message", message);
 	    return message;
 
 	}
@@ -142,8 +144,24 @@ var translator = (function() {
 	    
 	}
 
+	function translate_using_mode(msg, word, sender_function)
+	{
+		if(!users_translation_mode[msg.chat.id])
+			users_translation_mode[msg.chat.id] = translations[default_mode];
+		
+		translate(msg, users_translation_mode[msg.chat.id] + word,
+				  sender_function);
+	}
+
+	function set_user_translation(id, mode)
+	{
+		users_translation_mode[id] = translations[mode];
+	}
+
 	return {
-		translate : translate
+		translate : translate,
+		translate_using_mode : translate_using_mode,
+		set_user_translation: set_user_translation
 	}
 
 })();

@@ -2,53 +2,88 @@
 var TelegramBot = require('node-telegram-bot-api');
 var translator = require('./translator');
 
-/* Bot setup */
-var token = '218594964:AAFv56r5Sn71KmFMMtOfKOVjyzhKip7wp7M';
 
-// Setup polling way
+// Bot setup
+var token = 'YOUR TOKEN';
+
+// Setup webhook
 var bot = new TelegramBot(token);
-bot.setWebHook('https://agile-shore-43390.herokuapp.com/' + bot.token);
+bot.setWebHook('YOUR WEBHOOK' + bot.token);
 
 
 console.log('bot server started...');
-/* End bot setup */
+// End bot setup
 
 //Callback for wrapping bot.sendMessage
 function sendMessageBack(id, message, options) {
-    console.log(id,message,options);
+    //console.log(id,message,options); //debug purposes
     bot.sendMessage(id, message, options);
 }
 
-
-//Matches /eng [list,of,words]
-bot.onText(/\/eng (.+)/, function (msg, match) {
-  var wordsToSearch = match[1].split(','); //Array with words to traduce
-
-  for (word in wordsToSearch) {
-    translator.translate(msg, 'http://www.wordreference.com/es/en/translation.asp?spen=' 
-        + wordsToSearch[word], sendMessageBack);
-  }
+// Set eng for the user
+bot.onText(/\/eng/, function (msg, match) {
+    translator.set_user_translation(msg.chat.id,'eng');
 });
 
-//Matches /spa [lista,de,palabras]
-bot.onText(/\/spa (.+)/, function (msg, match) {
-  var wordsToSearch = match[1].split(','); //Array with words to traduce
+// Set spa for the user
+bot.onText(/\/spa/, function (msg, match) {
+    translator.set_user_translation(msg.chat.id,'spa');
+});
 
-  for (word in wordsToSearch) {
-    translator.translate(msg, 'http://www.wordreference.com/es/translation.asp?tranword=' 
-        + wordsToSearch[word], sendMessageBack);
-  }
+// Matches word 
+bot.onText(/(^[a-zA-Z\s*\,*]+)/, function(msg, match) {
+
+    match[1].split(',').map(function(word)
+    {
+        translator.translate_using_mode(msg,word,sendMessageBack);       
+    });
+
+});
+
+// Matches /eng [list,of,words]
+bot.onText(/\/eng ([a-zA-Z\s*\,*]+)/, function (msg, match) {
+
+    match[1].split(',').map(function(word)
+    {
+        translator.translate(msg,
+            'http://www.wordreference.com/es/en/translation.asp?spen=' + word,
+            sendMessageBack);       
+    });
+
+});
+
+// Matches /spa [lista,de,palabras]
+bot.onText(/\/spa ([a-zA-Z\s*\,*]+)/, function (msg, match) {
+
+    match[1].split(',').map(function(word)
+    {
+        translator.translate(msg,
+            'http://www.wordreference.com/es/translation.asp?tranword=' + word,
+            sendMessageBack);       
+    });
   
 });
-//Matches /help
+
+// Matches /help
 bot.onText(/\/help/, function (msg, match) {
-  var fromId = msg.chat.id;
-  var resp = 'Modo de uso - Usage mode: \n' + 
-            '/eng lista,de,palabras : Traduce al Inglés la lista de palabras' +
+
+  var resp = '*Modo de uso - Usage mode:*\n' + 
+            '/eng lista,de,palabras : Traduce al Inglés dla lista de palabras' +
                 'separadas por comas\n' +
             '/spa list,of,words : Translate from English the list of words' + 
                 'separated by commas\n' +
-            '/help display this message';
-  bot.sendMessage(fromId, resp);
+            '/help display this message\n' + 
+            '*Short usage mode:*\n' +
+            '/eng: Active mode spa -> eng\n' +
+            '/spa: Activa el modo eng -> eng\n' +
+            'word,to,search for: translate words using the active mode\n' +
+            '*eng -> spa* is active by default\n';
+  
+    var options = {
+        parse_mode : 'Markdown'
+    };
+  
+  bot.sendMessage(msg.chat.id, resp, options);
 });
+
 module.exports = bot;
