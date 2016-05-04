@@ -6,7 +6,6 @@ I have trying to learn Englosh on my own. But I need to translate a lot of new w
 
 Since wordreference's api is no longer available, I'm doing web scraping using [request](https://github.com/request/request) + [cheerio](https://github.com/cheeriojs/cheerio).
 
-
 ## New features!
 
 1. Short usage mode

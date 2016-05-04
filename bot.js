@@ -4,11 +4,11 @@ var translator = require('./translator');
 
 
 // Bot setup
-var token = 'YOUR TOKEN';
+var token = 'YOUR_TOKEN';
 
 // Setup webhook
 var bot = new TelegramBot(token);
-bot.setWebHook('YOUR WEBHOOK' + bot.token);
+bot.setWebHook('YOUR_WEBHOOK' + bot.token);
 
 
 console.log('bot server started...');
@@ -65,7 +65,7 @@ bot.onText(/\/spa ([a-zA-Z\s*\,*]+)/, function (msg, match) {
 });
 
 // Matches /help
-bot.onText(/\/help/, function (msg, match) {
+bot.onText(/\/help|\/start/, function (msg, match) {
 
   var resp = '*Modo de uso - Usage mode:*\n' + 
             '/eng lista,de,palabras : Traduce al Inglés dla lista de palabras' +

@@ -135,7 +135,8 @@ var translator = (function() {
 	      headers: {
 	        'User-Agent': 'request'
 	      },
-	      enconding: 'ascii'
+	      enconding: 'ascii',
+	      timeout: 5000
 	    };
 
 	    var word_being_searched = destiny.split('=')[1];
