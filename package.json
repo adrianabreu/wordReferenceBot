@@ -1,30 +1,17 @@
 {
-  "name": "wordreference-bot",
-  "version": "0.0.3",
-  "description": "A telegram bot that crawls wordreference",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
     "cheerio": "^0.20.0",
-    "ejs": "2.3.3",
+    "ejs": "^2.3.3",
     "express": "^4.13.3",
-    "node-telegram-bot-api": "^0.21.1",
-    "request": "^2.69.0"
-  },
-  "engines": {
-    "node": "0.12.7"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/aabreuglez/wordReferenceBot"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+    "mongoose": "^4.3.0",
+    "node-telegram-bot-api": "^0.23.3",
+    "request": "^2.69.0",
+    "socket.io": "^1.4.8",
+    "winston": "^2.2.0" 
+  }
 }
