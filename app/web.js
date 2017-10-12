@@ -1,9 +1,8 @@
-const express     = require('express');
-const bodyParser  = require('body-parser');
-const app         = express();
-const socket      = require('./sockethandler');
-const logger      = require('./logger');
-const config      = require('../config/config');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const socket = require('./sockethandler');
+const logger = require('./logger');
 
 //App config
 app.use(bodyParser.json());
@@ -12,8 +11,8 @@ app.set('views', __dirname + '/../views');
 app.use(express.static(__dirname + '/../public'));
 
 //Start server and socket
-var server = app.listen(config.port, config.host, function () {
-  logger.info('Web server started at http://%s:%s', config.host, config.port);
+var server = app.listen(process.env.PORT, process.env.HOST, function () {
+	logger.info('Web server started at http://%s:%s', process.env.HOST, process.env.PORT);
 });
 
 socket.createServer(server);
@@ -27,5 +26,5 @@ module.exports = function (bot) {
 	app.post('/bot' + bot.token, function (req, res) {
 		bot.processUpdate(req.body);
 		res.sendStatus(200);
-  });
+	});
 };

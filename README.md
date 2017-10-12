@@ -42,12 +42,23 @@ word,to,search for: translate words using the active mode
 eng -> spa is active by default
 ```
 
-## [Wrefbot web](https://wrefbot-aabreuglez.rhcloud.com/)
+## [Wrefbot web](http://wrefbot-wordreferencebot.7e14.starter-us-west-2.openshiftapps.com/)
 
 ## Screenshots
 
 ![bot chat](botworks.png)
 ![bot v2](botv2.png)
+
+## Environment variables needed
+
+* MONGODB_USER
+* MONGODB_PASSWORD
+* MONGODB_URL
+* MONGODB_DATABASE
+* HOST
+* PORT
+* TOKEN
+
 
 ## Documentation
 
