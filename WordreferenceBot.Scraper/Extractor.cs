@@ -2,23 +2,35 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using WordReferenceBot.Domain;
 
 namespace WordreferenceBot.Scraper
 {
     public class Extractor
     {
-        public static IEnumerable<Word> Extract(HtmlDocument wordReferencePage)
+        private Request request;
+        public Extractor()
         {
-            var words = ExtractWordsTranslations(wordReferencePage);
+            request = new Request();
+        }
+        public async Task<IEnumerable<Word>> Extract(string word)
+        {
+            var wordReferencePage = await request.ResquestWord(word);
+            var words = ParsePage(wordReferencePage);
             return words;
         }
 
-        private static IEnumerable<Word> ExtractWordsTranslations(HtmlDocument wordReferencePage)
+        private IEnumerable<Word> ParsePage(HtmlDocument wordReferencePage)
+        {
+            return ExtractWordsTranslations(wordReferencePage);
+        }
+
+        private IEnumerable<Word> ExtractWordsTranslations(HtmlDocument wordReferencePage)
         {
            
             var rowsWithTranslations = wordReferencePage.DocumentNode.SelectNodes("//tr[@class='even' or @class='odd']");
-            // Ahora tengo que crear una relación entre los significados y sus traducciones.
+            
             var words = new List<Word>();
             Word word = null;
             foreach (var row in rowsWithTranslations)
@@ -50,17 +62,17 @@ namespace WordreferenceBot.Scraper
             return words;
         }
 
-       private static string ExtractToWrd(HtmlNode tr)
+       private string ExtractToWrd(HtmlNode tr)
        {
             return tr.SelectNodes("td[@class='ToWrd']/node()[1]")?.First().InnerText;
        }
 
-        private static string ExtractFrWrd(HtmlNode tr)
+        private string ExtractFrWrd(HtmlNode tr)
         {
             return tr.SelectNodes("td[@class='FrWrd']/node()[1]")?.First().InnerText;
         }
 
-        private static string ExtractAcception(HtmlNode tr)
+        private string ExtractAcception(HtmlNode tr)
         {
             return tr.SelectNodes("td[@class='FrWrd']/following-sibling::td")?.FirstOrDefault().InnerText;
         }
