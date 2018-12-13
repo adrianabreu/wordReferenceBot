@@ -6,17 +6,16 @@ namespace WordReferenceBot.Domain
     public class Word
     {
         public string Value { get; set; }
-        public Translation Translations { get; set; }
+        public IEnumerable<Translation> Translations { get; set; }
 
+        public Word()
+        {
+
+        }
         public Word(string sourceWord)
         {
             Value = sourceWord;
-            Translations = new Translation();
-        }
-        public Word(string originalWord, Translation translations)
-        {
-            Value = originalWord;
-            Translations = translations;
+            Translations = new List<Translation>();
         }
     }
 }

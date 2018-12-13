@@ -7,10 +7,16 @@ namespace WordReferenceBot.Domain
 {
     public class Translation
     {
+        public string WordExpression { get; set; }
         public List<string> Meanings { get; set; }
         public List<string> PossibleTranslations { get; set; }
         public Translation()
         {
+
+        }
+        public Translation(string wordExpression)
+        {
+            WordExpression = wordExpression;
             Meanings = new List<string>();
             PossibleTranslations = new List<string>();
         }

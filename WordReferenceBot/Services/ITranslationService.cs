@@ -8,6 +8,6 @@ namespace WordReferenceBot.Api.Services
 {
     public interface ITranslationService
     {
-        Task<IEnumerable<Word>> Translate(string word);
+        Task<Word> Translate(string word);
     }
 }

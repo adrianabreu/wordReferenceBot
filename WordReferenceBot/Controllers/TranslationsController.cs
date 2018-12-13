@@ -19,7 +19,7 @@ namespace WordReferenceBot.Controllers
             _translationService = translationService;
         }
         [HttpGet("{word}")]
-        public async Task<IEnumerable<Word>> GetAsync(string word)
+        public async Task<Word> GetAsync(string word)
         {
             // Check for stored results 
 

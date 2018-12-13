@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>421a9671-ee74-4e13-8b62-87c1ad77ea5a</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/6c22bb55-0221-4ce4-9bf1-3c4a10a7294c/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/WordReferenceBot.Bot</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/6c22bb55-0221-4ce4-9bf1-3c4a10a7294c/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/WordReferenceBot.Bot</ApplicationInsightsAnnotationResourceId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HttpToSocks5Proxy" Version="1.0.5" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Telegram.Bot" Version="14.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WordReferenceBot.Domain\WordReferenceBot.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>

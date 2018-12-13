@@ -14,7 +14,7 @@ namespace WordReferenceBot.Api.Services
         {
             _extractor = new Extractor();
         }
-        public async Task<IEnumerable<Word>> Translate(string word)
+        public async Task<Word> Translate(string word)
         {
             return await _extractor.Extract(word);
         }

@@ -14,35 +14,35 @@ namespace WordreferenceBot.Scraper
         {
             request = new Request();
         }
-        public async Task<IEnumerable<Word>> Extract(string word)
+        public async Task<Word> Extract(string word)
         {
             var wordReferencePage = await request.ResquestWord(word);
-            var words = ParsePage(wordReferencePage);
+            var words = ParsePage(word, wordReferencePage);
             return words;
         }
 
-        private IEnumerable<Word> ParsePage(HtmlDocument wordReferencePage)
+        private Word ParsePage(string sourceWord, HtmlDocument wordReferencePage)
         {
-            return ExtractWordsTranslations(wordReferencePage);
+            return ExtractWordsTranslations(sourceWord,wordReferencePage);
         }
 
-        private IEnumerable<Word> ExtractWordsTranslations(HtmlDocument wordReferencePage)
+        private Word ExtractWordsTranslations(string sourceWord, HtmlDocument wordReferencePage)
         {
-           
+            var translations = new List<Translation>();
             var rowsWithTranslations = wordReferencePage.DocumentNode.SelectNodes("//tr[@class='even' or @class='odd']");
             
-            var words = new List<Word>();
-            Word word = null;
+            Word word = new Word(sourceWord);
+            Translation translation = null;
             foreach (var row in rowsWithTranslations)
             {
                 var frWord = ExtractFrWrd(row);
                 if (!String.IsNullOrEmpty(frWord))
                 {
-                    if (word != null)
+                    if (translation != null)
                     {
-                        words.Add(word);
+                        translations.Add(translation);
                     }
-                    word = new Word(frWord);
+                    translation = new Translation(frWord);
 
                 }
                 var accepcion = ExtractAcception(row);
@@ -50,16 +50,16 @@ namespace WordreferenceBot.Scraper
 
                 if (!String.IsNullOrEmpty(accepcion))
                 {
-                    word.Translations.AddMeaning(accepcion);
+                    translation.AddMeaning(accepcion);
                 }
                 if (!String.IsNullOrEmpty(toWrd))
                 {
-                    word.Translations.AddPossibleTranslation(toWrd);
+                    translation.AddPossibleTranslation(toWrd);
                 }
 
             };
-
-            return words;
+            word.Translations = translations;
+            return word;
         }
 
        private string ExtractToWrd(HtmlNode tr)
