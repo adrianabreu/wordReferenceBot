@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using WordReferenceBot.Api.Models;
 using WordReferenceBot.Domain;
 
 namespace WordReferenceBot.Bot.Services
@@ -14,11 +15,11 @@ namespace WordReferenceBot.Bot.Services
     public class TranslateService : ITranslateService
     {
         private readonly IBotService _botService;
-        private readonly IMarkdownService _markdownService;
+        private readonly ITelegramFormatterService _markdownService;
         private readonly ILogger<TranslateService> _logger;
         private readonly HttpClient _httpClient;
 
-        public TranslateService(IBotService botService, IMarkdownService markdownService, ILogger<TranslateService> logger)
+        public TranslateService(IBotService botService, ITelegramFormatterService markdownService, ILogger<TranslateService> logger)
         {
             _botService = botService;
             _markdownService = markdownService;
@@ -43,7 +44,7 @@ namespace WordReferenceBot.Bot.Services
 
                 var tasks = wordsToTranslate.Select(x => _httpClient.GetAsync($"http://localhost:62969/api/translations/{x}"));
                 var responses = await Task.WhenAll(tasks);
-                var translations = await Task.WhenAll(responses.Select(r => r.Content.ReadAsAsync<Word>()));
+                var translations = await Task.WhenAll(responses.Select(r => r.Content.ReadAsAsync<WordDto>()));
                 var formattedTranslations = translations.Select(t => _markdownService.FormatTranslation(t));
                 var messageWithoutFormatting = String.Join(';', formattedTranslations);
                 await _botService.Client.SendTextMessageAsync(message.Chat.Id, messageWithoutFormatting, ParseMode.Markdown);

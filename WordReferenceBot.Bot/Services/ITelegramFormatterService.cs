@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Telegram.Bot.Types;
-using WordReferenceBot.Domain;
+using WordReferenceBot.Api.Models;
 
 namespace WordReferenceBot.Bot.Services
 {
-    public interface IMarkdownService
+    public interface ITelegramFormatterService
     {
-        string FormatTranslation(Word word);
+        IEnumerable<string> FormatTranslation(WordDto word);
     }
 }

@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordReferenceBot.Bot", "Wor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordReferenceBot.Core.Test", "WordReferenceBot.Core.Test\WordReferenceBot.Core.Test.csproj", "{58324407-9B45-4F91-90C3-17B0F4332AA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordReferenceBot.Bot.Test", "WordReferenceBot.Bot.Test\WordReferenceBot.Bot.Test.csproj", "{D379AD17-6296-4278-804A-89F668D9D337}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{58324407-9B45-4F91-90C3-17B0F4332AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58324407-9B45-4F91-90C3-17B0F4332AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58324407-9B45-4F91-90C3-17B0F4332AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D379AD17-6296-4278-804A-89F668D9D337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D379AD17-6296-4278-804A-89F668D9D337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D379AD17-6296-4278-804A-89F668D9D337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D379AD17-6296-4278-804A-89F668D9D337}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

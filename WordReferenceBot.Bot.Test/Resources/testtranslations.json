@@ -1,0 +1,835 @@
+{
+    "value": "test",
+    "translations": [
+        {
+            "wordExpression": "test",
+            "meanings": [
+                "(examination)"
+            ],
+            "possibleTranslations": [
+                "examen ",
+                "prueba "
+            ]
+        },
+        {
+            "wordExpression": "test",
+            "meanings": [
+                "(analysis)"
+            ],
+            "possibleTranslations": [
+                "prueba ",
+                "análisis "
+            ]
+        },
+        {
+            "wordExpression": "test [sth]⇒",
+            "meanings": [
+                "(check performance)"
+            ],
+            "possibleTranslations": [
+                "probar",
+                "poner a prueba "
+            ]
+        },
+        {
+            "wordExpression": "test [sb], test [sb] for [sth]⇒",
+            "meanings": [
+                "(perform medical check)"
+            ],
+            "possibleTranslations": [
+                "hacer un chequeo a ",
+                "examinar a, revisar a "
+            ]
+        },
+        {
+            "wordExpression": "test [sb], test [sb] on [sth]⇒",
+            "meanings": [
+                "(check knowledge)"
+            ],
+            "possibleTranslations": [
+                "probar a ",
+                "testear a ",
+                "evaluar a "
+            ]
+        },
+        {
+            "wordExpression": "test [sth]⇒",
+            "meanings": [
+                "(try out)"
+            ],
+            "possibleTranslations": [
+                "probar"
+            ]
+        },
+        {
+            "wordExpression": "test [sth], test [sth] for [sth]⇒",
+            "meanings": [
+                "(analyse)"
+            ],
+            "possibleTranslations": [
+                "analizar"
+            ]
+        },
+        {
+            "wordExpression": "test",
+            "meanings": [
+                "(criterion) (PR)"
+            ],
+            "possibleTranslations": [
+                "marca ",
+                "distintivo ",
+                "característica "
+            ]
+        },
+        {
+            "wordExpression": "test",
+            "meanings": [
+                "(measurement)"
+            ],
+            "possibleTranslations": [
+                "medida ",
+                "prueba "
+            ]
+        },
+        {
+            "wordExpression": "test",
+            "meanings": [
+                "(cricket: test match)"
+            ],
+            "possibleTranslations": [
+                "partido "
+            ]
+        },
+        {
+            "wordExpression": "test⇒",
+            "meanings": [
+                "US, informal (achieve a test result)"
+            ],
+            "possibleTranslations": [
+                "examinarse"
+            ]
+        },
+        {
+            "wordExpression": "test [sth]⇒",
+            "meanings": [
+                "(put under strain)"
+            ],
+          "possibleTranslations": [
+            "testear",
+            "desafiar"
+          ]
+        },
+        {
+            "wordExpression": "achievement test",
+            "meanings": [
+                "(school: assessment)"
+            ],
+            "possibleTranslations": [
+                "prueba de aptitud, evaluación de aptitud "
+            ]
+        },
+        {
+            "wordExpression": "acid test",
+            "meanings": [
+                "figurative (decisive indicator) (figurado)"
+            ],
+            "possibleTranslations": [
+                "prueba de fuego "
+            ]
+        },
+        {
+            "wordExpression": "acid test",
+            "meanings": [
+                "(chemistry: litmus test)"
+            ],
+            "possibleTranslations": [
+                "viraje del tornasol "
+            ]
+        },
+        {
+            "wordExpression": "alpha test",
+            "meanings": [
+                "(software: first trial) (informática)"
+            ],
+            "possibleTranslations": [
+                "prueba alfa "
+            ]
+        },
+        {
+            "wordExpression": "aptitude test",
+            "meanings": [
+                "(test of innate ability)"
+            ],
+            "possibleTranslations": [
+                "test de aptitud "
+            ]
+        },
+        {
+            "wordExpression": "bench test, bench check",
+            "meanings": [
+                "(engine test)"
+            ],
+            "possibleTranslations": [
+                "prueba en banco ",
+                "ensayo en banco "
+            ]
+        },
+        {
+            "wordExpression": "beta test",
+            "meanings": [
+                "(software: second trial) (informática)"
+            ],
+            "possibleTranslations": [
+                "prueba beta "
+            ]
+        },
+        {
+            "wordExpression": "beta test",
+            "meanings": [
+                "(intelligence test) (inteligencia)"
+            ],
+            "possibleTranslations": [
+                "prueba beta "
+            ]
+        },
+        {
+            "wordExpression": "beta test [sth]",
+            "meanings": [
+                "(software: trial again)"
+            ],
+            "possibleTranslations": [
+                "probar una versión beta, poner a prueba una versión beta "
+            ]
+        },
+        {
+            "wordExpression": "blood test",
+            "meanings": [
+                "(lab test on blood sample)"
+            ],
+            "possibleTranslations": [
+                "analítica ",
+                "análisis de sangre ",
+                "examen de sangre ",
+                "prueba sanguínea "
+            ]
+        },
+        {
+            "wordExpression": "blood test evidence",
+            "meanings": [
+                "(law: medical factors)"
+            ],
+            "possibleTranslations": [
+                "prueba de análisis de sangre "
+            ]
+        },
+        {
+            "wordExpression": "breath test",
+            "meanings": [
+                "(law: to check alcohol level)"
+            ],
+            "possibleTranslations": [
+                "prueba de alcoholemia ",
+                "análisis de alcoholemia ",
+                "test de alcoholemia "
+            ]
+        },
+        {
+            "wordExpression": "breath test [sb]",
+            "meanings": [
+                "(law: test alcohol level)"
+            ],
+            "possibleTranslations": [
+                "hacer la prueba de alcoholemia ",
+                "someter al análisis de alcoholemia "
+            ]
+        },
+        {
+            "wordExpression": "Breathalyzer test, breathalyzer test, also UK: breathalyser test",
+            "meanings": [
+                "® (law: blood alcohol level)"
+            ],
+            "possibleTranslations": [
+                "alcoholímetro, alcoholómetro ",
+                "test de alcoholemia "
+            ]
+        },
+        {
+            "wordExpression": "chi-square test, chi-squared test",
+            "meanings": [
+                "(mathematics: statistical test) (MX, matemática)"
+            ],
+            "possibleTranslations": [
+                "prueba χ², prueba χ cuadrada ",
+                "prueba de Pearson ",
+                "prueba de ji-cuadrado ",
+                "prueba chi cuadrado "
+            ]
+        },
+        {
+            "wordExpression": "cloze test",
+            "meanings": [
+                "(exercise: fill in blanks) (AmL, examen)"
+            ],
+            "possibleTranslations": [
+                "prueba de lagunas ",
+                "ejercicio de rellenar los espacios en blanco ",
+                "ejercicio de rellenar los huecos en blanco "
+            ]
+        },
+        {
+            "wordExpression": "consumer trial, consumer test",
+            "meanings": [
+                "(evaluation of a product) (técnica de análisis de productos)"
+            ],
+            "possibleTranslations": [
+                "prueba del consumidor ",
+                "evaluación del consumidor "
+            ]
+        },
+        {
+            "wordExpression": "diagnostic test",
+            "meanings": [
+                "(procedure for detecting illness, problem)"
+            ],
+            "possibleTranslations": [
+                "prueba diagnóstica ",
+                "prueba de diagnóstico "
+            ]
+        },
+        {
+            "wordExpression": "dope test",
+            "meanings": [
+                "(test for drugs in body)"
+            ],
+            "possibleTranslations": [
+                "prueba de drogas ",
+                "test de drogas ",
+                "prueba de dopaje "
+            ]
+        },
+        {
+            "wordExpression": "driver's test (US), driving test (UK)",
+            "meanings": [
+                "(exam for learner drivers)"
+            ],
+            "possibleTranslations": [
+                "examen de conducir ",
+                "examen de manejo "
+            ]
+        },
+        {
+            "wordExpression": "drug test",
+            "meanings": [
+                "(screening for traces of a substance)"
+            ],
+            "possibleTranslations": [
+                "test antidopaje ",
+                "test antidoping ",
+                "prueba de dopaje "
+            ]
+        },
+        {
+            "wordExpression": "eye exam, eye test",
+            "meanings": [
+                "colloquial (sight test)"
+            ],
+            "possibleTranslations": [
+                "examen de la vista "
+            ]
+        },
+        {
+            "wordExpression": "field-test [sth]⇒",
+            "meanings": [
+                "figurative (trial [sth] under real conditions)"
+            ],
+            "possibleTranslations": [
+                "hacer un experimento de campo "
+            ]
+        },
+        {
+            "wordExpression": "flight test [sth]",
+            "meanings": [
+                "(trial: aerial equipment)"
+            ],
+            "possibleTranslations": [
+                "prueba  de vuelo "
+            ]
+        },
+        {
+            "wordExpression": "genetic marker test",
+            "meanings": [
+                "(test using DNA for identification)"
+            ],
+            "possibleTranslations": [
+                "prueba de marcador genético "
+            ]
+        },
+        {
+            "wordExpression": "glucose tolerance test",
+            "meanings": [
+                "(medicine)"
+            ],
+            "possibleTranslations": [
+                "prueba de tolerancia a la glucosa "
+            ]
+        },
+        {
+            "wordExpression": "high-test",
+            "meanings": [
+                "(gasoline: boiling at low temperature)"
+            ],
+            "possibleTranslations": [
+                "de alto octanaje "
+            ]
+        },
+        {
+            "wordExpression": "intelligence test",
+            "meanings": [
+                "(test to measure intelligence)"
+            ],
+            "possibleTranslations": [
+                "test de inteligencia "
+            ]
+        },
+        {
+            "wordExpression": "laboratory test",
+            "meanings": [
+                "(scientific experiment or analysis)"
+            ],
+            "possibleTranslations": [
+                "análisis clínico ",
+                "prueba de laboratorio "
+            ]
+        },
+        {
+            "wordExpression": "listening test",
+            "meanings": [
+                "(aural examination)"
+            ],
+            "possibleTranslations": [
+                "audiometría "
+            ]
+        },
+        {
+            "wordExpression": "literacy test",
+            "meanings": [
+                "(exam in basic reading and writing)"
+            ],
+            "possibleTranslations": [
+                "examen de lectoescritura ",
+                "prueba de alfabetización ",
+                "examen de alfabetización "
+            ]
+        },
+        {
+            "wordExpression": "litmus test",
+            "meanings": [
+                "(test for acidity or alkalinity)"
+            ],
+            "possibleTranslations": [
+                "prueba con tornasol "
+            ]
+        },
+        {
+            "wordExpression": "litmus test",
+            "meanings": [
+                "figurative (decisive basis for judgement) (figurado)"
+            ],
+            "possibleTranslations": [
+                "prueba de fuego ",
+                "prueba definitiva "
+            ]
+        },
+        {
+            "wordExpression": "means test",
+            "meanings": [
+                "(appraisal of [sb]'s financial situation)"
+            ],
+            "possibleTranslations": [
+                "estudio socioeconómico ",
+                "evaluación de medios económicos "
+            ]
+        },
+        {
+            "wordExpression": "means-test [sb]⇒",
+            "meanings": [
+                "(determine eligibility for benefits)"
+            ],
+            "possibleTranslations": [
+                "hacerle una prueba de haberes a "
+            ]
+        },
+        {
+            "wordExpression": "medical test",
+            "meanings": [
+                "(diagnostic exam or procedure)"
+            ],
+            "possibleTranslations": [
+                "examen médico ",
+                "chequeo médico ",
+                "prueba médica "
+            ]
+        },
+        {
+            "wordExpression": "oral test",
+            "meanings": [
+                "(spoken examination) (educación)"
+            ],
+            "possibleTranslations": [
+                "prueba oral ",
+                "examen oral "
+            ]
+        },
+        {
+            "wordExpression": "oral test",
+            "meanings": [
+                "(spoken language exam) (educación)"
+            ],
+            "possibleTranslations": [
+                "examen oral "
+            ]
+        },
+        {
+            "wordExpression": "pap smear, Pap smear, pap test",
+            "meanings": [
+                "(test for cervical cancer)"
+            ],
+            "possibleTranslations": [
+                "papanicolao, papanicolau ",
+                "pap "
+            ]
+        },
+        {
+            "wordExpression": "Pap test",
+            "meanings": [
+                "(estrogen level test)"
+            ],
+            "possibleTranslations": [
+                "prueba de Papanicolaou ",
+                "pap "
+            ]
+        },
+        {
+            "wordExpression": "Pap test",
+            "meanings": [
+                "(cancer test using body fluid)"
+            ],
+            "possibleTranslations": [
+                "prueba de Papanicolaou ",
+                "pap "
+            ]
+        },
+        {
+            "wordExpression": "paternity test",
+            "meanings": [
+                "(scientific test to prove fatherhood)"
+            ],
+            "possibleTranslations": [
+                "prueba de paternidad "
+            ]
+        },
+        {
+            "wordExpression": "performance test",
+            "meanings": [
+                "(psychology) (psicología)"
+            ],
+            "possibleTranslations": [
+                "prueba de desempeño "
+            ]
+        },
+        {
+            "wordExpression": "personality test",
+            "meanings": [
+                "(psychological evaluation)"
+            ],
+            "possibleTranslations": [
+                "prueba de personalidad ",
+                "test de personalidad "
+            ]
+        },
+        {
+            "wordExpression": "placement examination, placement exam, placement test",
+            "meanings": [
+                "(assessment test)"
+            ],
+            "possibleTranslations": [
+                "prueba de evaluación ",
+                "prueba de nivel ",
+                "prueba de diagnóstico "
+            ]
+        },
+        {
+            "wordExpression": "placement test",
+            "meanings": [
+                "(assessment exam)"
+            ],
+            "possibleTranslations": [
+                "examen de nivel ",
+                "prueba de nivel "
+            ]
+        },
+        {
+            "wordExpression": "polygraph test",
+            "meanings": [
+                "(questioning using lie detector)"
+            ],
+            "possibleTranslations": [
+                "prueba poligráfica ",
+                "detección de mentiras "
+            ]
+        },
+        {
+            "wordExpression": "practical test",
+            "meanings": [
+                "(exam: measures skill, competence)"
+            ],
+            "possibleTranslations": [
+                "examen práctico "
+            ]
+        },
+        {
+            "wordExpression": "pregnancy test",
+            "meanings": [
+                "(diagnostic kit for determining pregnancy)"
+            ],
+            "possibleTranslations": [
+                "prueba de embarazo ",
+                "test de embarazo "
+            ]
+        },
+        {
+            "wordExpression": "PSAT",
+            "meanings": [
+                "US, initialism (college entrance exam) (sigla, voz inglesa)"
+            ],
+            "possibleTranslations": [
+                "PSAT "
+            ]
+        },
+        {
+            "wordExpression": "put [sth/sb] to the test",
+            "meanings": [
+                "(check performance)"
+            ],
+            "possibleTranslations": [
+                "poner a prueba "
+            ]
+        },
+        {
+            "wordExpression": "road test",
+            "meanings": [
+                "US (test of vehicle in use)"
+            ],
+            "possibleTranslations": [
+                "prueba en carretera "
+            ]
+        },
+        {
+            "wordExpression": "Scholastic Aptitude Test",
+            "meanings": [
+                "(US college entrance test) (Estados Unidos)"
+            ],
+            "possibleTranslations": [
+                "Examen de Aptitudes Escolares ",
+                "examen estandarizado para la admisión universitaria "
+            ]
+        },
+        {
+            "wordExpression": "screen test",
+            "meanings": [
+                "(film audition)"
+            ],
+            "possibleTranslations": [
+                "prueba de cámara ",
+                "casting "
+            ]
+        },
+        {
+            "wordExpression": "severe test",
+            "meanings": [
+                "(ordeal, extreme trial)"
+            ],
+            "possibleTranslations": [
+                "dura prueba ",
+                "prueba extrema "
+            ]
+        },
+        {
+            "wordExpression": "skin test",
+            "meanings": [
+                "(medical test for allergies, etc.) (alergia)"
+            ],
+            "possibleTranslations": [
+                "prueba cutánea ",
+                "examen cutáneo "
+            ]
+        },
+        {
+            "wordExpression": "smear test",
+            "meanings": [
+                "(pap smear: cervical cancer check) (Med)"
+            ],
+            "possibleTranslations": [
+                "frotis cervical ",
+                "Papanicolau "
+            ]
+        },
+        {
+            "wordExpression": "spelling test",
+            "meanings": [
+                "(school: quiz to check spelling)"
+            ],
+            "possibleTranslations": [
+                "examen de ortografía ",
+                "prueba de ortografía "
+            ]
+        },
+        {
+            "wordExpression": "stand the test of time",
+            "meanings": [
+                "(last, endure)"
+            ],
+            "possibleTranslations": [
+                "superar el paso del tiempo ",
+                "resistir el paso del tiempo ",
+                "perdurar"
+            ]
+        },
+        {
+            "wordExpression": "standardized test, also UK: standardised test",
+            "meanings": [
+                "(same test for everyone)"
+            ],
+            "possibleTranslations": [
+                "test estandarizado, examen estandarizado ",
+                "prueba estandarizada "
+            ]
+        },
+        {
+            "wordExpression": "stiff joint test",
+            "meanings": [
+                "(diagnostic test for arthritis) (AR)"
+            ],
+            "possibleTranslations": [
+                "artritest ",
+                "prueba de detección de factor reumatoide "
+            ]
+        },
+        {
+            "wordExpression": "stress test",
+            "meanings": [
+                "(check made on strength or stability)"
+            ],
+            "possibleTranslations": [
+                "prueba de estrés "
+            ]
+        },
+        {
+            "wordExpression": "take a test",
+            "meanings": [
+                "(sit an exam or quiz)"
+            ],
+            "possibleTranslations": [
+                "presentarse a un examen ",
+                "hacer examen, hacer un examen, hacer una prueba ",
+                "examinarse",
+                "rendir un examen "
+            ]
+        },
+        {
+            "wordExpression": "TB test",
+            "meanings": [
+                "abbreviation (tuberculosis screening)"
+            ],
+            "possibleTranslations": [
+                "test de tuberculosis ",
+                "prueba de tuberculosis "
+            ]
+        },
+        {
+            "wordExpression": "test ban",
+            "meanings": [
+                "(agreement not to test nuclear weapons)"
+            ],
+            "possibleTranslations": [
+                "prohibición de ensayos nucleares, proscripción de ensayos nucleares "
+            ]
+        },
+        {
+            "wordExpression": "test case",
+            "meanings": [
+                "(court case that sets a precedent)"
+            ],
+            "possibleTranslations": [
+                "caso que sienta precedente ",
+                "caso de prueba ",
+                "jurisprudencia "
+            ]
+        },
+        {
+            "wordExpression": "test driver",
+            "meanings": [
+                "(person who drives vehicles to trial them)"
+            ],
+            "possibleTranslations": [
+                "piloto de pruebas "
+            ]
+        },
+        {
+            "wordExpression": "test flight",
+            "meanings": [
+                "(aircraft's trial journey)"
+            ],
+            "possibleTranslations": [
+                "vuelo de prueba "
+            ]
+        },
+        {
+            "wordExpression": "test negative, test negative for [sth]",
+            "meanings": [
+                "(have negative result)"
+            ],
+            "possibleTranslations": [
+                "obtener un resultado negativo ",
+                "dar negativo "
+            ]
+        },
+        {
+            "wordExpression": "test [sth] out",
+            "meanings": [
+                "(try, use experimentally)"
+            ],
+            "possibleTranslations": [
+                "probar"
+            ]
+        },
+        {
+            "wordExpression": "test paper",
+            "meanings": [
+                "(copy of an exam)"
+            ],
+            "possibleTranslations": [
+                "ejemplar de una prueba ",
+                "examen "
+            ]
+        },
+        {
+            "wordExpression": "test pattern",
+            "meanings": [
+                "(TV: test card)"
+            ],
+            "possibleTranslations": [
+                "señal de ajuste "
+            ]
+        },
+        {
+            "wordExpression": "test pilot",
+            "meanings": [
+                "([sb] who flies aircraft to trial them)"
+            ],
+            "possibleTranslations": [
+                "piloto de pruebas "
+            ]
+        }
+    ]
+}

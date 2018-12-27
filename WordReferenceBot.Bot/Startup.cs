@@ -28,7 +28,7 @@ namespace WordReferenceBot.Bot
         {
 
             services.AddSingleton<ITranslateService, TranslateService>();
-            services.AddSingleton<IMarkdownService, MarkdownService>();
+            services.AddSingleton<ITelegramFormatterService, TelegramFormatterService>();
             services.AddSingleton<IBotService, BotService>();
 
             services.Configure<BotConfiguration>(Configuration.GetSection("BotConfiguration"));
