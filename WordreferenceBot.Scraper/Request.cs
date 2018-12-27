@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WordreferenceBot.Scraper
 {
-    public class Request
+    public class Request : IRequest
     {
         private const string _wordreferenceUrl = "http://www.wordreference.com/es/translation.asp?tranword=";
         private HttpClient _httpClient;

@@ -41,7 +41,7 @@ namespace WordReferenceBot.Bot.Services
             {
                 var wordsToTranslate = message.Text.Split(',');
 
-                var tasks = wordsToTranslate.Select(x => _httpClient.GetAsync($"https://wordreferencebotapi.azurewebsites.net/api/translations/{x}"));
+                var tasks = wordsToTranslate.Select(x => _httpClient.GetAsync($"http://localhost:62969/api/translations/{x}"));
                 var responses = await Task.WhenAll(tasks);
                 var translations = await Task.WhenAll(responses.Select(r => r.Content.ReadAsAsync<Word>()));
                 var formattedTranslations = translations.Select(t => _markdownService.FormatTranslation(t));

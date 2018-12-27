@@ -15,6 +15,12 @@ namespace WordReferenceBot.Bot.Services
     {
         public string FormatTranslation(Word word)
         {
+
+            if (word.Translations == null)
+            {
+                return GenerateNoTranslationsMessage(word.Value);
+            }
+
             string formattedMessage = "";
 
             foreach (var translation in word.Translations)
@@ -31,6 +37,11 @@ namespace WordReferenceBot.Bot.Services
                 formattedMessage += "-----------------------------------\n";
             }
             return formattedMessage;
+        }
+
+        private string GenerateNoTranslationsMessage(string word)
+        {
+            return $"No translation found for *{word}*";
         }
     }
 }
