@@ -5,19 +5,20 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using WordReferenceBot.Domain;
+using WordReferenceBot.Domain.Entities;
 
 namespace WordreferenceBot.Scraper
 {
-    public class Extractor
+    public class TranslationExtractor
     {
-        private IRequest _request;
-        public Extractor(IRequest request)
+        private IWordReferenceRequest _request;
+        public TranslationExtractor(IWordReferenceRequest request)
         {
             _request = request;
         }
-        public async Task<Word> Extract(string word)
+        public async Task<Word> ExtractTranslation(string word)
         {
-            var wordReferencePage = await _request.ResquestWord(word);
+            var wordReferencePage = await _request.RequestTranslation(word);
             var words = ParsePage(word, wordReferencePage);
             return words;
         }
@@ -36,7 +37,7 @@ namespace WordreferenceBot.Scraper
             Translation translation = null;
             foreach (var row in rowsWithTranslations)
             {
-                var frWord = ExtractFrWrd(row);
+                var frWord = ExtractFrWrd(row)?.Trim();
                 if (!String.IsNullOrEmpty(frWord))
                 {
                     if (translation != null)
@@ -46,8 +47,8 @@ namespace WordreferenceBot.Scraper
                     translation = new Translation(frWord);
 
                 }
-                var accepcion = ExtractAcception(row);
-                var toWrd = ExtractToWrd(row);
+                var accepcion = ExtractAcception(row)?.Trim();
+                var toWrd = ExtractToWrd(row)?.Trim();
 
                 if (!String.IsNullOrEmpty(accepcion))
                 {
@@ -78,8 +79,6 @@ namespace WordreferenceBot.Scraper
         {
             return tr.SelectNodes("td[@class='FrWrd']/following-sibling::td")?.FirstOrDefault().InnerText;
         }
-
-
         
     }
 }

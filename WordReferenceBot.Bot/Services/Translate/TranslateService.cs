@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,12 +20,15 @@ namespace WordReferenceBot.Bot.Services
         private readonly ILogger<TranslateService> _logger;
         private readonly HttpClient _httpClient;
 
-        public TranslateService(IBotService botService, ITelegramFormatterService markdownService, ILogger<TranslateService> logger)
+        private readonly string _apiUrl;
+
+        public TranslateService(IOptions<BotConfiguration> botConfiguration, IBotService botService, ITelegramFormatterService markdownService, ILogger<TranslateService> logger)
         {
             _botService = botService;
             _markdownService = markdownService;
             _logger = logger;
             _httpClient = new HttpClient();
+            _apiUrl = botConfiguration.Value.ApiUrl;
         }
 
         public async Task TranslateAsync(Update update)
@@ -41,13 +45,14 @@ namespace WordReferenceBot.Bot.Services
             if (message.Type == MessageType.Text)
             {
                 var wordsToTranslate = message.Text.Split(',');
-
-                var tasks = wordsToTranslate.Select(x => _httpClient.GetAsync($"http://localhost:62969/api/translations/{x}"));
+                var tasks = wordsToTranslate.Select(x => _httpClient.GetAsync($"{_apiUrl}/api/translations/{x}"));
                 var responses = await Task.WhenAll(tasks);
                 var translations = await Task.WhenAll(responses.Select(r => r.Content.ReadAsAsync<WordDto>()));
                 var formattedTranslations = translations.Select(t => _markdownService.FormatTranslation(t));
-                var messageWithoutFormatting = String.Join(';', formattedTranslations);
-                await _botService.Client.SendTextMessageAsync(message.Chat.Id, messageWithoutFormatting, ParseMode.Markdown);
+                foreach (var formattedTranslation in formattedTranslations.First())
+                {
+                    await _botService.Client.SendTextMessageAsync(message.Chat.Id, formattedTranslation, ParseMode.Markdown);
+                }
             }
         }
     }

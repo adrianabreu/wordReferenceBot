@@ -35,13 +35,13 @@ namespace WordReferenceBot.Bot.Test
         [Fact]
         public void When_Translation_Is_Too_Big_Then_Split_Message()
         {
-            
+            int TELEGRAM_MESSAGE_SIZE = 4096;
             var wordDto = JsonConvert.DeserializeObject<WordDto>(TestResource.testtranslations);
 
             var messages = _messageService.FormatTranslation(wordDto);
             foreach(var message in messages)
             {
-                Assert.True(message.Length < 4096);
+                Assert.True(message.Length < TELEGRAM_MESSAGE_SIZE);
             }
 
         }

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace WordreferenceBot.Scraper
 {
-    public interface IRequest
+    public interface IWordReferenceRequest
     {
-        Task<HtmlDocument> ResquestWord(string word);
+        Task<HtmlDocument> RequestTranslation(string word);
     }
 }

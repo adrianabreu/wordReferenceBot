@@ -1,115 +1,115 @@
 {
-    "value": "beautiful",
-    "translations": [
-        {
-            "wordExpression": "beautiful",
-            "meanings": [
-                "(delightful to look at)"
-            ],
-            "possibleTranslations": [
-                "hermoso/a ",
-                "precioso/a ",
-                "bello/la "
-            ]
-        },
-        {
-            "wordExpression": "beautiful",
-            "meanings": [
-                "(person: very attractive)"
-            ],
-            "possibleTranslations": [
-                "hermoso/a ",
-                "lindo/a ",
-                "guapo/a "
-            ]
-        },
-        {
-            "wordExpression": "beautiful",
-            "meanings": [
-                "(experience: lovely)"
-            ],
-            "possibleTranslations": [
-                "excelente "
-            ]
-        },
-        {
-            "wordExpression": "beautiful",
-            "meanings": [
-                "slang (exclamation: approval) (coloquial)"
-            ],
-            "possibleTranslations": [
-                "¡buenísimo! "
-            ]
-        },
-        {
-            "wordExpression": "beautiful",
-            "meanings": [
-                "informal, ironic (exclamation: distaste) (ironía)"
-            ],
-            "possibleTranslations": [
-                "¡qué rico! "
-            ]
-        },
-        {
-            "wordExpression": "the beautiful",
-            "meanings": [
-                "(concept of beauty)"
-            ],
-            "possibleTranslations": [
-                "lo bello ",
-                "belleza "
-            ]
-        },
-        {
-            "wordExpression": "beautiful day",
-            "meanings": [
-                "(day of sunny weather)"
-            ],
-            "possibleTranslations": [
-                "día precioso "
-            ]
-        },
-        {
-            "wordExpression": "beautiful girl",
-            "meanings": [
-                "(attractive young female) (AR, coloquial)"
-            ],
-            "possibleTranslations": [
-                "linda mina ",
-                "preciosidad, belleza ",
-                "chica linda, chica guapa ",
-                "una belleza "
-            ]
-        },
-        {
-            "wordExpression": "the beautiful people",
-            "meanings": [
-                "(privileged few)"
-            ],
-            "possibleTranslations": [
-                "gente bella ",
-                "gente bonita, gente linda ",
-                "gente guapa "
-            ]
-        },
-        {
-            "wordExpression": "beautiful voice",
-            "meanings": [
-                "(talent for singing)"
-            ],
-            "possibleTranslations": [
-                "hermosa voz "
-            ]
-        },
-        {
-            "wordExpression": "look beautiful",
-            "meanings": [
-                "(be attractively dressed)"
-            ],
-            "possibleTranslations": [
-                "estar preciosa ",
-                "verse hermosa "
-            ]
-        }
-    ]
+  "value": "beautiful",
+  "translations": [
+    {
+      "wordExpression": "beautiful",
+      "meanings": [
+        "(delightful to look at)"
+      ],
+      "possibleTranslations": [
+        "hermoso/a",
+        "precioso/a",
+        "bello/la"
+      ]
+    },
+    {
+      "wordExpression": "beautiful",
+      "meanings": [
+        "(person: very attractive)"
+      ],
+      "possibleTranslations": [
+        "hermoso/a",
+        "lindo/a",
+        "guapo/a"
+      ]
+    },
+    {
+      "wordExpression": "beautiful",
+      "meanings": [
+        "(experience: lovely)"
+      ],
+      "possibleTranslations": [
+        "excelente"
+      ]
+    },
+    {
+      "wordExpression": "beautiful",
+      "meanings": [
+        "slang (exclamation: approval) (coloquial)"
+      ],
+      "possibleTranslations": [
+        "¡buenísimo!"
+      ]
+    },
+    {
+      "wordExpression": "beautiful",
+      "meanings": [
+        "informal, ironic (exclamation: distaste) (ironía)"
+      ],
+      "possibleTranslations": [
+        "¡qué rico!"
+      ]
+    },
+    {
+      "wordExpression": "the beautiful",
+      "meanings": [
+        "(concept of beauty)"
+      ],
+      "possibleTranslations": [
+        "lo bello",
+        "belleza"
+      ]
+    },
+    {
+      "wordExpression": "beautiful day",
+      "meanings": [
+        "(day of sunny weather)"
+      ],
+      "possibleTranslations": [
+        "día precioso"
+      ]
+    },
+    {
+      "wordExpression": "beautiful girl",
+      "meanings": [
+        "(attractive young female) (AR, coloquial)"
+      ],
+      "possibleTranslations": [
+        "linda mina",
+        "preciosidad, belleza",
+        "chica linda, chica guapa",
+        "una belleza"
+      ]
+    },
+    {
+      "wordExpression": "the beautiful people",
+      "meanings": [
+        "(privileged few)"
+      ],
+      "possibleTranslations": [
+        "gente bella",
+        "gente bonita, gente linda",
+        "gente guapa"
+      ]
+    },
+    {
+      "wordExpression": "beautiful voice",
+      "meanings": [
+        "(talent for singing)"
+      ],
+      "possibleTranslations": [
+        "hermosa voz"
+      ]
+    },
+    {
+      "wordExpression": "look beautiful",
+      "meanings": [
+        "(be attractively dressed)"
+      ],
+      "possibleTranslations": [
+        "estar preciosa",
+        "verse hermosa"
+      ]
+    }
+  ]
 }
