@@ -34,6 +34,12 @@ namespace WordreferenceBot.Scraper
             var rowsWithTranslations = wordReferencePage.DocumentNode.SelectNodes("//tr[@class='even' or @class='odd']");
 
             Word word = new Word(sourceWord);
+
+            if (rowsWithTranslations == null)
+            {
+                return word;
+            }
+
             Translation translation = null;
             foreach (var row in rowsWithTranslations)
             {
