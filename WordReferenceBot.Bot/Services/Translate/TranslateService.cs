@@ -44,12 +44,15 @@ namespace WordReferenceBot.Bot.Services
 
             if (message.Type == MessageType.Text)
             {
-                var wordsToTranslate = message.Text.Split(',');
-                var tasks = wordsToTranslate.Select(x => _httpClient.GetAsync($"{_apiUrl}/api/translations/{x}"));
-                var responses = await Task.WhenAll(tasks);
-                var translations = await Task.WhenAll(responses.Select(r => r.Content.ReadAsAsync<WordDto>()));
-                var formattedTranslations = translations.Select(t => _markdownService.FormatTranslation(t));
-                foreach (var formattedTranslation in formattedTranslations.First())
+                var wordsToTranslate = message.Text;
+                // Do not forget to sanitize the input
+
+                var response = await _httpClient.GetAsync($"{_apiUrl}/api/translations/{wordsToTranslate}");
+                var translations = await response.Content.ReadAsAsync<WordDto>();
+
+                var formattedTranslations = _markdownService.FormatTranslation(translations);
+
+                foreach (var formattedTranslation in formattedTranslations)
                 {
                     await _botService.Client.SendTextMessageAsync(message.Chat.Id, formattedTranslation, ParseMode.Markdown);
                 }
