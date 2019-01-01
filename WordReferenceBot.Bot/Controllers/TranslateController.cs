@@ -18,6 +18,12 @@ namespace WordReferenceBot.Bot.Controllers
             _translateService = updateService;
         }
 
+        [HttpGet]
+        public IActionResult KeepAlive()
+        {
+            return Ok();
+        }
+
         // POST api/update
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]Update update)
