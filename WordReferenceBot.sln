@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordreferenceBot.Core", "Wo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordReferenceBot.Domain", "WordReferenceBot.Domain\WordReferenceBot.Domain.csproj", "{98D155AA-1DFC-425C-BBF2-C8136450BF46}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordReferenceBot.Migrations", "WordReferenceBot.Migrations\WordReferenceBot.Migrations.csproj", "{A8A81C53-9A01-42D7-B7E6-B22A88D0E26C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordReferenceBot.Bot", "WordReferenceBot.Bot\WordReferenceBot.Bot.csproj", "{9EF04AD7-399F-40DC-8CBD-0BE2CBC8CA39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordReferenceBot.Core.Test", "WordReferenceBot.Core.Test\WordReferenceBot.Core.Test.csproj", "{58324407-9B45-4F91-90C3-17B0F4332AA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordReferenceBot.Core.Test", "WordReferenceBot.Core.Test\WordReferenceBot.Core.Test.csproj", "{58324407-9B45-4F91-90C3-17B0F4332AA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordReferenceBot.Bot.Test", "WordReferenceBot.Bot.Test\WordReferenceBot.Bot.Test.csproj", "{D379AD17-6296-4278-804A-89F668D9D337}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordReferenceBot.Bot.Test", "WordReferenceBot.Bot.Test\WordReferenceBot.Bot.Test.csproj", "{D379AD17-6296-4278-804A-89F668D9D337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordreferenceBot.Migrations", "WordreferenceBot.Migrations\WordreferenceBot.Migrations.csproj", "{40614E09-C93F-4D9E-A652-48DF8F5A47E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		{98D155AA-1DFC-425C-BBF2-C8136450BF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98D155AA-1DFC-425C-BBF2-C8136450BF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98D155AA-1DFC-425C-BBF2-C8136450BF46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8A81C53-9A01-42D7-B7E6-B22A88D0E26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8A81C53-9A01-42D7-B7E6-B22A88D0E26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8A81C53-9A01-42D7-B7E6-B22A88D0E26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8A81C53-9A01-42D7-B7E6-B22A88D0E26C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9EF04AD7-399F-40DC-8CBD-0BE2CBC8CA39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9EF04AD7-399F-40DC-8CBD-0BE2CBC8CA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EF04AD7-399F-40DC-8CBD-0BE2CBC8CA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{D379AD17-6296-4278-804A-89F668D9D337}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D379AD17-6296-4278-804A-89F668D9D337}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D379AD17-6296-4278-804A-89F668D9D337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40614E09-C93F-4D9E-A652-48DF8F5A47E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40614E09-C93F-4D9E-A652-48DF8F5A47E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40614E09-C93F-4D9E-A652-48DF8F5A47E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40614E09-C93F-4D9E-A652-48DF8F5A47E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
